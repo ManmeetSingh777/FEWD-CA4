@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+
+
+
+
+
+
+body {
+    background-color: #00fff7e1;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Roboto', sans-serif;
+  }
+
+
+
+.quiz-container {
+    max-width: 2000px;
+    margin: 20px auto;
+    padding: 40px; 
+    border-radius: 10px;
+    background-color:rgba(255, 74, 74, 0.5); 
+    box-shadow: 0 0 10px rgba(88, 155, 255, 0.1);
+    animation: fadeInUp 1s ease-in-out; 
+  }
+  
+  .quiz-container h2 {
+    font-size: 1.8rem; 
+    margin-bottom: 20px; 
+    color: #695a2e;
+  }
+  
+  .quiz-container p {
+    margin-bottom: 20px; 
+  }
+  
+  .quiz-container .options {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    margin: 5px;
+  }
+  
+  .quiz-container .options-column {
+    flex: 1;
+    margin-right: 20px; 
+  }
+  
+  .quiz-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .quiz-container li {
+    margin-bottom: 15px; 
+  }
+  
+  .quiz-container .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; 
+  }
+  
+  .quiz-container button {
+    padding: 12px 24px; 
+    margin: 0 10px; 
+  }
+  
+  .quiz-container button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .quiz-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  .quiz-container label {
+    cursor: pointer;
+  }
+
+  .dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  
+
+
+  .dark-mode .quiz-container {
+    background-color: #333;
+    color: #fff;
+  }
+
+ 
+  
+  .app-container {
+    max-width: 1000px;
+    padding: 40px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out; 
+  }
+  
+ 
+
+
+
+  
+@keyframes glow {
+    from {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    to {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00bcd4, 0 0 40px #00bcd4, 0 0 50px #00bcd4, 0 0 60px #00bcd4, 0 0 70px #00bcd4; /* Glowing effect */
+    }
+  }
+  
+  
+  p {
+    color: #666;
+  }
+  
+  button {
+  padding: 12px 24px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  .home-animation {
+    animation: pulse 2s infinite; 
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Dark mode styles */
+  .dark-mode {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .dark-mode .app-container {
+    background-color: #444;
+    color: #ddd;
+  }
+  
+  .dark-mode h1 {
+    color: #61dafb;
+  }
+  
+  .dark-mode p {
+    color: #bbb;
+  }
+  
+  .dark-mode button {
+    background-color: #61dafb;
+  }
+  
+  .dark-mode button:hover {
+    background-color: #c59257;
+  }
+  
+
+  .options label {
+    color: #333; 
+    transition: transform 0.2s ease-in-out; 
+    display: block;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-color: rgba(0, 123, 255, 0.5);
+
+  }
+  
+  .dark-mode .options label {
+    color: #fff; 
+  }
+
+ 
+  
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: glow 1.5s infinite alternate;
+    color: #000000; 
+  }
+
+  .question {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    animation: slideIn 1s ease-in-out; 
+  }
+
+
+
+
+  .options {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    list-style: none; 
+  }
+  
+  .option {
+  border-radius: 50%; 
+  padding: 10px;
+  margin: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  }
+  
+  .option:hover {
+    background-color: #0056b3;
+  }
+  
+.options input {
+  display: none;
+}
+
+.options label {
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 2px solid black; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+/* Light mode styles */
+.option label.light-mode {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.option input:checked + label.light-mode {
+  background-color: #0056b3;
+}
+
+/* Dark mode styles */
+.option label.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.option input:checked + label.dark-mode {
+  background-color: #111;
+}y
+  
+  .option label:hover {
+    background-color: #0056b3;
+  }
+  
+  .dark-mode .option {
+    background-color: #333;
+    color: red;
+  }
+  
+  .dark-mode .option:hover {
+    background-color: #111;
+  }
+  
+  .dark-mode .option label:hover {
+    background-color: #111;
+  }
+
+
+
+
+  .highlighted {
+    background-color: yellow; 
+  }
+
+
+
+  .quiz-container .options label {
+    display: block;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease-in-out; 
+  }
+
+
+  .quiz-container .options label:hover {
+    background-color: #ff8800;
+    transform: scale(1.05); 
+  }
+
+  .dark-mode .quiz-container {
+    background-color: #333;
+    color: #fff;
+  }
+
+
+  .logo{
+    width: 100px;
+    height: auto;
+  }
+
+  .play-button {
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .play-button:hover {
+    background-color: #0056b3;
+  }
+  
+
+
+  
+
+
+
+
+
+  
