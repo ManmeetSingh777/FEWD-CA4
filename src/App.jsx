@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './Quiz.css';
 import logo from './assets/download.png';
-
+import Quiz from './Components/Quiz';
+import Result from './Components/Result';
+import Home from './Components/Home';
 
 const questions = [
   {
@@ -31,88 +33,6 @@ const questions = [
   },
 ];
 
-function Quiz({ onComplete }) {
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selectedOption, setSelectedOption] = useState('');
-  const [score, setScore] = useState(0);
-  const [highlighted, setHighlighted] = useState(false);
-
-  const handleOptionSelect = (option) => {
-    setSelectedOption(option);
-    setTimeout(() => {
-      setSelectedOption('');
-      if (currentQuestion + 1 < questions.length) {
-        setCurrentQuestion(currentQuestion + 1);
-      } else {
-        onComplete(score + (option === questions[currentQuestion].answer ? 1 : 0));
-      }
-    }, 100);
-    if (option === questions[currentQuestion].answer) {
-      setScore(score + 1);
-    }
-  };
-
-  const handleQuit = () => {
-    onComplete(score);
-  };
-
-  const handleHighlight = () => {
-    setHighlighted(!highlighted);
-  };
-
-  return (
-    <div className="quiz-container">
-      <h2>Question {currentQuestion + 1} out of {questions.length}</h2>
-      <p>
-        <span className={highlighted ? 'highlighted' : ''}>{questions[currentQuestion].question}</span>
-      </p>
-      <div className="options">
-        <div className="options-column">
-          {questions[currentQuestion].options.map((option, index) => (
-            <li key={index}>
-              <label>
-                <input
-                  type="radio"
-                  value={option}
-                  checked={selectedOption === option}
-                  onChange={() => handleOptionSelect(option)}
-                />
-                {option}
-              </label>
-            </li>
-          ))}
-        </div>
-      </div>
-      <div className="button-container">
-        <button onClick={handleQuit}>Quit</button>
-        <button onClick={handleHighlight}>Highlight</button>
-      </div>
-    </div>
-  );
-}
-
-function Result({ score }) {
-  const percentage = ((score / questions.length) * 100).toFixed(2);
-
-  return (
-    <div>
-      <h1>Quiz Completed!</h1>
-      <p>Your score: {score} / {questions.length}</p>
-      <p>Percentage: {percentage}%</p>
-      <button className='play-button' onClick={() => window.location.reload()}>Play Again</button>
-    </div>
-  );
-}
-
-function Home() {
-  return (
-    <div>
-      <h1>Welcome to the Quiz!</h1>
-      <a href="/quiz">Play</a>
-    </div>
-  );
-}
-
 function App() {
   const [score, setScore] = useState(null);
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
@@ -135,12 +55,11 @@ function App() {
       </button>
       <div className="quiz-container">
         {currentPath === '/' && <Home />}
-        {currentPath === '/quiz' && <Quiz onComplete={handleQuizComplete} />}
-        {currentPath === '/result' && score !== null && <Result score={score} />}
+        {currentPath === '/quiz' && <Quiz questions={questions} onComplete={handleQuizComplete} />}
+        {currentPath === '/result' && score !== null && <Result score={score} questions={questions} />}
       </div>
     </div>
   );
 }
 
 export default App;
-

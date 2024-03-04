@@ -359,6 +359,12 @@ h1 {
   .play-button:hover {
     background-color: #0056b3;
   }
+
+  .options-container {
+    display: flex; /* Set display property to flex */
+    flex-direction: column; /* Set flex-direction to column */
+  }
+  
   
 
 
