@@ -361,8 +361,8 @@ h1 {
   }
 
   .options-container {
-    display: flex; /* Set display property to flex */
-    flex-direction: column; /* Set flex-direction to column */
+    display: flex; 
+    flex-direction: column; 
   }
   
   

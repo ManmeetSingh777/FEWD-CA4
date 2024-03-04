@@ -11,7 +11,8 @@ export default function Result({ score, questions }) {
         <h1>Quiz Completed!</h1>
         <p>Your score: {score} / {questions.length}</p>
         <p>Percentage: {percentage}%</p>
-        <button className='play-button' onClick={() => window.location.reload()}>Play Again</button>
+        
+        <Link to = "/"><button className='play-button' >Play Again</button></Link>
         
       </div>
     );
