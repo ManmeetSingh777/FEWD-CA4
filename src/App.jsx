@@ -4,7 +4,7 @@ import logo from './assets/download.png';
 import Quiz from './Components/Quiz';
 import Result from './Components/Result';
 import Home from './Components/Home';
-
+import { Route,Routes } from 'react-router-dom';
 const questions = [
   {
     question: "What is ReactJS?",
@@ -54,9 +54,11 @@ function App() {
         {darkMode ? 'Light Mode' : 'Dark Mode'}
       </button>
       <div className="quiz-container">
-        {currentPath === '/' && <Home />}
-        {currentPath === '/quiz' && <Quiz questions={questions} onComplete={handleQuizComplete} />}
-        {currentPath === '/result' && score !== null && <Result score={score} questions={questions} />}
+        <Routes>
+          <Route path='/' element = {<Home/>}></Route>
+          <Route path='/quiz' element = {<Quiz questions={questions} onComplete={handleQuizComplete} />}></Route>
+          <Route path='/result' element = {<Result score={score} questions={questions} />}></Route>
+        </Routes>
       </div>
     </div>
   );

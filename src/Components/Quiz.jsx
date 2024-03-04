@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 export default function Quiz({ onComplete,questions }) {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [selectedOption, setSelectedOption] = useState('');
@@ -52,7 +53,8 @@ export default function Quiz({ onComplete,questions }) {
           </div>
         </div>
         <div className="button-container">
-          <button onClick={handleQuit}>Quit</button>
+        <Link to = "/result"><button onClick={handleQuit}>Quit</button></Link>
+          
           <button onClick={handleHighlight}>Highlight</button>
         </div>
       </div>
